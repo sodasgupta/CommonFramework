@@ -1,0 +1,8 @@
+HostName,IPAddress,ServerId,OSType,Group
+komal_cloud_endure,54.175.35.183,i-03f7ca7c709f6e539,Linux,App2
+EC2AMAZ-KTB29IR,EC2AMAZ-KTB29IR,i-006d24f4bf20320b6,Windows,App2
+mallinath_assess,34.238.43.229,i-06ed7112079e032fe,Linux,App2
+docker_rest_service,54.237.191.21,i-0706202b138f55c6b,Linux,App2
+docker_rest_serviceq,514.237.191.21,i-02706202b138f55c6b,Linux,bhhh
+WIN-T760HKQABMS,WIN-T760HKQABMS,i-0cc69088ca628f7fd,Windows,2008
+WIN-0U5PB4GU4ED,WIN-0U5PB4GU4ED,i-03307525616575b9f,Windows,2012

@@ -8,5 +8,5 @@ cucumber:
      
          common:
             browser: "${BROWSER:Chrome}"
-            platform_url: "${URL:https://160.1.49.15/#/user/login}"        
+            platform_url: "${URL:http://ab82932f.ngrok.io/SpringBootCRUDApp/#/}"        
     

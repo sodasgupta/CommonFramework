@@ -20,7 +20,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(features = "src/test/resources",
 				plugin = {"pretty", "com.cucumber.listener.ExtentCucumberFormatter:target/reports/index.html","json:target/reports/index.json"},
 				monochrome = true,
-             	tags={"@QA-REGRESSION"})
+             	tags={"@Test"})
 
 public class CucumberTest {
 }

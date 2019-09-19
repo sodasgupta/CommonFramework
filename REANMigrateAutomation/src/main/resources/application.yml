@@ -8,5 +8,5 @@ cucumber:
      
          common:
             browser: "${BROWSER:Chrome}"
-            platform_url: "${URL:http://ab82932f.ngrok.io/SpringBootCRUDApp/#/}"        
+            platform_url: "${URL:http://50b1f6f7.ngrok.io/SpringBootCRUDApp/}"        
     

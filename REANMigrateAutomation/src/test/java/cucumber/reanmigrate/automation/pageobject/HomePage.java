@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import com.cucumber.listener.Reporter;
+
 import junit.framework.Assert;
 
 
@@ -24,7 +26,7 @@ public class HomePage extends Abstract {
 		return this;
 	}
 	
-	@SuppressWarnings({ "deprecation" })
+	
 	public void checkHomePage(String Header) {
 		fullScreen();
 		navigate(platformUrl);
@@ -35,7 +37,8 @@ public class HomePage extends Abstract {
 		
 		//Assert.assertEquals(header, Header);
 		
-		System.out.println("Test");
+		System.out.println(header);
+		Reporter.addStepLog(header);
 		
 		
 	}

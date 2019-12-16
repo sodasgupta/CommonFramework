@@ -1,5 +1,6 @@
 package cucumber.reanmigrate.automation.sd;
 
+import java.util.List;
 import java.util.Map;
 
 import org.junit.runner.RunWith;
@@ -28,59 +29,41 @@ public class TestSD extends Abstract {
 	@Autowired
 	HomePage hp;
 
-	@Given("^User is at home page$")
+	@Given("^User is at login page$")
 	public void user_is_at_home_page() throws Throwable {
 
-		hp.checkHomePage("REAN Demo");
+		hp.checkHomePage("Manufacturing Solutions");
 
-	}
-
-	@Given("^User enter data for the following fields and click on \"([^\"]*)\"$")
-	public void user_enter_data_for_the_following_fields_and_click_on(String Button, DataTable inputData)
-			throws Throwable {
-		for (Map<String, String> data : inputData.asMaps(String.class, String.class)) {
-
-			editTextByXpath("//label[contains(text(),'Name')]/following::input", data.get("Name"));
-			editTextByXpath("//label[contains(text(),'Age')]/following::input", data.get("Age"));
-			editTextByXpath("//label[contains(text(),'Salary')]/following::input", data.get("Salary"));
-
-			clickElementWithXPath("//input[@value='Add']");
-
-		}
-	}
-
-	@Given("^User click on Edit for below resource$")
-	public void user_click_on_Edit_for_below_resource(DataTable verifyData) throws Throwable {
-		for (Map<String, String> data : verifyData.asMaps(String.class, String.class)) {
-
-			clickElementWithXPath(
-					"//td//child::*[text()='" + data.get("Name") + "']//following::button[contains(text(),'Edit')]");
-
-		}
 	}
 
 	@Then("^enter \"([^\"]*)\" in \"([^\"]*)\" text field$")
 	public void enter_in_text_field(String textField, String Field) throws Throwable {
-		AutomationUtils.sleepInSec(5);
-		editTextWithXPath("//label[text()='" + Field + "']//following-sibling::div//input", textField);
+		//AutomationUtils.sleepInSec(5);
+		editTextWithXPath("//label[text()='"+Field+"']//following-sibling::input", textField);
 	}
 
 	@Then("^click on \"([^\"]*)\"$")
 	public void click_on(String arg1) throws Throwable {
 		AutomationUtils.sleepInSec(5);
-		clickElementWithXPath("//input[@value='Update']");
+		clickElementWithXPath("//input[@value='"+arg1+"']");
 
 	}
 
-	@Given("^User click on Remove for below resource$")
-	public void user_click_on_Remove_for_below_resource(DataTable verifyData) throws Throwable {
-		for (Map<String, String> data : verifyData.asMaps(String.class, String.class)) {
-
-			clickElementWithXPath(
-					"//td//child::*[text()='" + data.get("Name") + "']//following::button[contains(text(),'Remove')]");
-
+	@Then("^the user validates text \"([^\"]*)\"$")
+	public void the_user_validates_text(String text) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		List<String> lst = getTextWebElements("//*[text()='"+text+"']");
+		
+		if(lst.size()>0) {
+			
+			Assert.assertTrue(true);
 		}
+		else {
+			Assert.assertTrue(false);
+		}
+		
 	}
+
 	
 	
 	@Then("^user wait \"([^\"]*)\" sec$")

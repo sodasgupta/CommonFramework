@@ -6,6 +6,8 @@ import javax.print.DocFlavor.STRING;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,6 +17,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 @Component
@@ -78,4 +82,6 @@ public class DriverFactory {
 		driver.get().quit();
 		driver.remove();
 	}
+	
+	
 }

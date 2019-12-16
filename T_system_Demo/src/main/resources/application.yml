@@ -8,5 +8,5 @@ cucumber:
      
          common:
             browser: "${BROWSER:Chrome}"
-            platform_url: "${URL:http://50b1f6f7.ngrok.io/SpringBootCRUDApp/}"        
+            platform_url: "${URL:http://prod-bmw-alb-1225467072.ap-northeast-1.elb.amazonaws.com:9000/mi-dashboard}"        
     

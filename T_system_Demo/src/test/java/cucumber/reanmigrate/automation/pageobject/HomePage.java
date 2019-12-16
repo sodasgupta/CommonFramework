@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.cucumber.listener.Reporter;
 
+import cucumber.reanmigrate.automation.utils.AutomationUtils;
 import junit.framework.Assert;
 
 
@@ -36,6 +37,7 @@ public class HomePage extends Abstract {
 		String header = pageTitle();
 		
 		//Assert.assertEquals(header, Header);
+		AutomationUtils.sleepInSec(5);
 		
 		System.out.println(header);
 		Reporter.addStepLog(header);
